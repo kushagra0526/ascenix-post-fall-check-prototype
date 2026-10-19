@@ -66,7 +66,7 @@ TIME_RX = [
     re.compile(r"\b(\d{2})(\d{2})\s*(?:h|hr|hrs)\b"),
     re.compile(r"\b(\d{1,2})\s*(am|pm)\b"),
 ]
-LIST_RX = re.compile(r"(?:,|\band\b|&)\s*@?\s*(\d{2})(\d{2})\b")
+LIST_RX = re.compile(r"(?:,|/|\band\b|&)\s*@?\s*(\d{2})(\d{2})\b")
 
 
 def _hm(m):
@@ -85,12 +85,13 @@ def _hm(m):
 
 def times_in(text):
     """Clock times written in a clause, in order of appearance."""
-    found = []
+    found, spans = [], []
     for rx in TIME_RX:
         for m in rx.finditer(text):
             hm = _hm(m)
-            if hm:
+            if hm and not any(a < m.end() and m.start() < b for a, b in spans):  # "4:12 pm" is not also "12 pm"
                 found.append((m.start(), hm))
+                spans.append(m.span())
     if found:
         for m in LIST_RX.finditer(text):
             h, mi = int(m.group(1)), int(m.group(2))
@@ -204,7 +205,7 @@ def read_notes(case, policy=DEFAULT_POLICY):
                     party = here
                 if party and (re.search(NOTIFY, c) or re.search(ATTEMPT, c) or re.search(FAX, c)
                               or re.search(r"\b(?:notify|inform|call|update|contact)\b", c)):
-                    st = "PAST" if past else notify_status(c, policy["fax_counts_as_md"])
+                    st = "PAST" if (past or s_past) else notify_status(c, policy["fax_counts_as_md"])  # sentence about a prior fall
                     for p in party:
                         if st:
                             per_party.setdefault(p, []).append((st, c, when))

@@ -1,0 +1,95 @@
+{
+  "cases": 400,
+  "decisions": 2800,
+  "gaps": {
+    "MD": 180,
+    "CAREPLAN": 118,
+    "POA": 207,
+    "FOLLOWUP": 160,
+    "HIR": 131,
+    "ASSESS": 142,
+    "HIR_ESC": 14
+  },
+  "compliant": {
+    "ASSESS": 258,
+    "POA": 193,
+    "HIR": 269,
+    "HIR_ESC": 386,
+    "FOLLOWUP": 240,
+    "CAREPLAN": 282,
+    "MD": 220
+  },
+  "gaps_total": 952,
+  "compliant_total": 1848,
+  "missing_hir_slots": 499,
+  "lookalikes": {
+    "denies_head": 62,
+    "ASSESS_plan_then_done": 105,
+    "CAREPLAN_plan_then_done": 70,
+    "MD_plan_then_done": 73,
+    "followup_lookalike": 140,
+    "next_due": 28,
+    "POA_plan_then_done": 55
+  },
+  "checker": {
+    "gaps_shown_compliant": 7,
+    "false_flags": 21,
+    "status_wrong": 48,
+    "missed_slots_found": 498,
+    "false_missing_slots": 68,
+    "gaps_shown_compliant_by_step": {
+      "POA": 6,
+      "HIR": 1
+    },
+    "false_flags_by_step": {
+      "HIR": 21
+    }
+  },
+  "keyword": {
+    "gaps_shown_compliant": 503,
+    "false_flags": 481,
+    "status_wrong": 1090,
+    "missed_slots_found": 251,
+    "false_missing_slots": 1677,
+    "gaps_shown_compliant_by_step": {
+      "MD": 105,
+      "POA": 142,
+      "CAREPLAN": 64,
+      "ASSESS": 77,
+      "FOLLOWUP": 82,
+      "HIR": 19,
+      "HIR_ESC": 14
+    },
+    "false_flags_by_step": {
+      "CAREPLAN": 212,
+      "MD": 30,
+      "POA": 44,
+      "ASSESS": 55,
+      "HIR": 140
+    }
+  },
+  "keyword_skip_negation_words": {
+    "gaps_shown_compliant": 380,
+    "false_flags": 563,
+    "status_wrong": 1095,
+    "missed_slots_found": 251,
+    "false_missing_slots": 1677,
+    "gaps_shown_compliant_by_step": {
+      "MD": 39,
+      "POA": 108,
+      "CAREPLAN": 64,
+      "ASSESS": 54,
+      "FOLLOWUP": 82,
+      "HIR": 19,
+      "HIR_ESC": 14
+    },
+    "false_flags_by_step": {
+      "POA": 66,
+      "ASSESS": 62,
+      "CAREPLAN": 212,
+      "MD": 83,
+      "HIR": 140
+    }
+  }
+}
+sample checker disagreements: [(820769, 'POA', 'MISSING', 'LATE'), (424288, 'HIR', 'MET', 'MISSING_SLOTS'), (995349, 'POA', 'ATTEMPT_ONLY', 'LATE'), (447070, 'HIR', 'MET', 'MISSING_SLOTS'), (811979, 'HIR', 'MET', 'MISSING_SLOTS'), (264113, 'POA', 'MISSING', 'LATE'), (823698, 'POA', 'MISSING', 'LATE'), (370575, 'HIR', 'MET', 'MISSING_SLOTS'), (559699, 'HIR', 'MET', 'MISSING_SLOTS'), (247875, 'POA', 'MISSING', 'LATE'), (789622, 'POA', 'ATTEMPT_ONLY', 'LATE'), (507255, 'POA', 'MISSING', 'LATE'), (445367, 'HIR', 'MET', 'MISSING_SLOTS'), (111799, 'HIR', 'MET', 'MISSING_SLOTS'), (771325, 'HIR', 'MET', 'MISSING_SLOTS')]
