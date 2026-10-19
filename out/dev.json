@@ -1,0 +1,83 @@
+{
+  "cases": 400,
+  "decisions": 2800,
+  "gaps": {
+    "MD": 214,
+    "POA": 197,
+    "ASSESS": 156,
+    "HIR": 129,
+    "FOLLOWUP": 143,
+    "CAREPLAN": 119,
+    "HIR_ESC": 15
+  },
+  "compliant": {
+    "ASSESS": 244,
+    "HIR": 271,
+    "HIR_ESC": 385,
+    "FOLLOWUP": 257,
+    "CAREPLAN": 281,
+    "POA": 203,
+    "MD": 186
+  },
+  "gaps_total": 973,
+  "compliant_total": 1827,
+  "missing_hir_slots": 451,
+  "lookalikes": {
+    "next_due": 25,
+    "CAREPLAN_plan_then_done": 84,
+    "ASSESS_plan_then_done": 94,
+    "POA_plan_then_done": 60,
+    "MD_plan_then_done": 66,
+    "denies_head": 57,
+    "followup_lookalike": 131
+  },
+  "checker": {
+    "gaps_shown_compliant": 0,
+    "false_flags": 0,
+    "status_wrong": 0,
+    "missed_slots_found": 451,
+    "false_missing_slots": 0,
+    "gaps_shown_compliant_by_step": {},
+    "false_flags_by_step": {}
+  },
+  "keyword": {
+    "gaps_shown_compliant": 538,
+    "false_flags": 156,
+    "status_wrong": 770,
+    "missed_slots_found": 324,
+    "false_missing_slots": 1820,
+    "gaps_shown_compliant_by_step": {
+      "MD": 143,
+      "POA": 158,
+      "FOLLOWUP": 78,
+      "CAREPLAN": 66,
+      "HIR": 10,
+      "ASSESS": 68,
+      "HIR_ESC": 15
+    },
+    "false_flags_by_step": {
+      "HIR": 155,
+      "POA": 1
+    }
+  },
+  "keyword_skip_negation_words": {
+    "gaps_shown_compliant": 247,
+    "false_flags": 245,
+    "status_wrong": 648,
+    "missed_slots_found": 324,
+    "false_missing_slots": 1820,
+    "gaps_shown_compliant_by_step": {
+      "MD": 52,
+      "POA": 92,
+      "FOLLOWUP": 78,
+      "HIR": 10,
+      "HIR_ESC": 15
+    },
+    "false_flags_by_step": {
+      "HIR": 155,
+      "MD": 89,
+      "POA": 1
+    }
+  },
+  "checker_disagreements_sample": []
+}
